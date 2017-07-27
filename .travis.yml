@@ -17,6 +17,7 @@ before_install:
 
   # Sanity check
   - lando version
+  - lando info
 
 # install:
 #
