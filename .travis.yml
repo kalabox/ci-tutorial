@@ -12,7 +12,7 @@ before_install:
   #- curl -fsSL -o /tmp/kalabox.deb "http://installer.kalabox.io/kalabox-latest-dev.deb"
   - git clone https://github.com/kalabox/lando.git lando
   - cd lando && npm install
-  - ln -s /usr/local/bin/lando lando/bin/lando.js
+  - ln -s bin/lando.js /usr/local/bin/lando
   #- sudo dpkg -i /tmp/kalabox.deb
 
   # Sanity check
