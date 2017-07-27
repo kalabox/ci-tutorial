@@ -13,6 +13,7 @@ before_install:
   - git clone https://github.com/kalabox/lando.git lando
   - cd lando && npm install
   - sudo ln -s bin/lando.js /usr/local/bin/lando
+  - echo $PATH
   #- sudo dpkg -i /tmp/kalabox.deb
 
   # Sanity check
