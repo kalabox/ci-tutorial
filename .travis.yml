@@ -16,8 +16,7 @@ before_install:
   #- sudo dpkg -i /tmp/kalabox.deb
 
   # Sanity check
-  - lando version
-  - lando info
+  - lando version -- -v
 
 # install:
 #
@@ -30,7 +29,7 @@ script:
   - lando start -- -vv
 
   # Install Drupal and check for bootstrap
-  - cd /home/travis/ci-tutorial/web
+  - cd /home/travis/serundeputy/ci-tutorial/web
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
   - lando drush st | grep Successful
   - lando drush cr | grep "Cache rebuild complete."
