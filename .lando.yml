@@ -1,0 +1,4 @@
+name: ci-tutorial
+recipe: drupal8
+config:
+  webroot: web

@@ -1,0 +1,50 @@
+language: php
+php:
+  - '7.0'
+services:
+  - docker
+
+before_install:
+
+  # Install lando
+  - sudo apt-get -y update
+  - sudo apt-get -y install iptables cgroup-bin bridge-utils curl
+  #- curl -fsSL -o /tmp/kalabox.deb "http://installer.kalabox.io/kalabox-latest-dev.deb"
+  - git clone https://github.com/kalabox/lando.git lando
+  - ln -s /usr/local/bin/lando lando/bin/lando.js
+  #- sudo dpkg -i /tmp/kalabox.deb
+
+  # Sanity check
+  - lando version
+
+install:
+
+  # Install composer deps
+  - composer install
+
+script:
+
+  # Run code and styling
+  - composer test
+
+  # Test our build
+  - kbox start -- -d
+
+  # Run Drush to test if we can bootstrap the site
+  - cd public
+  - kbox drush updatedb -y
+  - kbox rr -y
+  - kbox drush features-revert-all -y
+  - kbox drush features-revert-all -y
+  - kbox drush status | grep Successful
+  - kbox drush cc all | grep "'all' cache was cleared. "
+
+  # Run some sanity checks
+  - kbox node --version
+  - kbox npm --version
+  - kbox bower --version
+  - kbox gulp --version
+  - kbox bower --version
+  - kbox composer --version
+  - kbox drush version
+  - kbox platform
