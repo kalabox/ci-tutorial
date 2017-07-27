@@ -29,7 +29,8 @@ script:
   - lando start -- -vv
 
   # Install Drupal and check for bootstrap
-  - cd /home/travis/serundeputy/ci-tutorial/web
+  - pwd
+  - cd serundeputy/ci-tutorial/web
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
   - lando drush st | grep Successful
   - lando drush cr | grep "Cache rebuild complete."
