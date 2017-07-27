@@ -1,0 +1,13 @@
+name: 'Responsive image test theme'
+type: module
+description: 'Test theme for responsive image.'
+package: Testing
+# version: VERSION
+# core: 8.x
+
+
+# Information added by Drupal.org packaging script on 2017-07-05
+version: '8.3.5'
+core: '8.x'
+project: 'drupal'
+datestamp: 1499274885
