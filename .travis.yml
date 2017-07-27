@@ -30,6 +30,8 @@ script:
   - pwd
   - ls /home/
   - ls /home/travis
+  - ls /home/travis/builds
+  - ls /home/travis/build
   - cd serundeputy/ci-tutorial/web
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
   - lando drush st | grep Successful
