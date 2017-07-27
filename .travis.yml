@@ -27,7 +27,7 @@ before_install:
 script:
 
   # Install dependencies
-  - lando start -- -v
+  - lando start -- -vv
 
   # Install Drupal
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8"
