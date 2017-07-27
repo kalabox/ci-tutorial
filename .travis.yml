@@ -15,9 +15,6 @@ before_install:
   - sudo ln -s /home/travis/lando/bin/lando.js /usr/local/bin/lando
   #- sudo dpkg -i /tmp/kalabox.deb
 
-  # Sanity check
-  - lando version -- -v
-
 # install:
 #
 #   # Install composer deps
@@ -29,7 +26,9 @@ script:
   - lando start -- -vv
 
   # Install Drupal and check for bootstrap
+  - lando version
   - pwd
+  - ls /home/
   - ls /home/travis
   - cd serundeputy/ci-tutorial/web
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
