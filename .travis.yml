@@ -32,7 +32,7 @@ script:
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8"
 
   # Run code and styling checks
-  - lando composer test
+  #- lando composer test
 
 
   # # Run Drush to test if we can bootstrap the site
