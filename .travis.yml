@@ -29,8 +29,11 @@ script:
   # Install dependencies
   - lando start -- -vv
 
-  # Install Drupal
-  - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8"
+  # Install Drupal and check for bootstrap
+  - cd web
+  - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
+  - lando drush st | grep Successful
+  - lando drush cr | grep "'all' cache was cleared. "
 
   # Run code and styling checks
   #- lando composer test
