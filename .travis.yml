@@ -24,16 +24,17 @@ before_install:
 script:
 
   # Install dependencies
-  - lando start -- -vv
+  - lando start -- -v
 
   # Install Drupal and check for bootstrap
   - lando version
-  - pwd
-  - ls /home/
-  - ls /home/travis
-  - ls /home/travis/builds
-  - ls /home/travis/build
+  # - pwd
+  # - ls /home/
+  # - ls /home/travis
+  # - ls /home/travis/builds
+  # - ls /home/travis/build
   - cd /home/travis/build/serundeputy/ci-tutorial/web
+  - pwd
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
   - lando drush st | grep Successful
   - lando drush cr | grep "Cache rebuild complete."
