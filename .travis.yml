@@ -10,10 +10,11 @@ before_install:
   - sudo apt-get -y update
   - sudo apt-get -y install iptables cgroup-bin bridge-utils curl
   #- curl -fsSL -o /tmp/kalabox.deb "http://installer.kalabox.io/kalabox-latest-dev.deb"
-  - git clone https://github.com/kalabox/lando.git /home/travis/lando
-  - cd /home/travis/lando && npm install
-  - sudo ln -s /home/travis/lando/bin/lando.js /usr/local/bin/lando
-  #- sudo dpkg -i /tmp/kalabox.deb
+  # - git clone https://github.com/kalabox/lando.git /home/travis/lando
+  # - cd /home/travis/lando && npm install
+  # - sudo ln -s /home/travis/lando/bin/lando.js /usr/local/bin/lando
+  - curl -fsSL -o /tmp/lando-latest.deb http://installer.kalabox.io/lando-latest-dev.deb
+  - sudo dpkg -i /tmp/lando-latest.deb
 
 # install:
 #
