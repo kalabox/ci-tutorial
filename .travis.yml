@@ -4,8 +4,6 @@ php:
 services:
   - docker
 
-dist: precise
-
 before_install:
 
   # Install lando
