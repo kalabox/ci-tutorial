@@ -14,7 +14,7 @@ before_install:
   # - cd /home/travis/lando && npm install
   # - sudo ln -s /home/travis/lando/bin/lando.js /usr/local/bin/lando
   - curl -fsSL -o /tmp/lando-latest.deb http://installer.kalabox.io/lando-latest-dev.deb
-  - sudo dpkg -i --configure -a /tmp/lando-latest.deb
+  - sudo dpkg -i -f /tmp/lando-latest.deb
 
 # install:
 #
