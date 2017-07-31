@@ -35,6 +35,7 @@ script:
   # - ls /home/travis/build
   - cd /home/travis/build/serundeputy/ci-tutorial/web
   - pwd
+  - cp sites/default/default.settings.php /sites/default/settings.php
   - lando drush si --db-url="mysql://drupal8:drupal8/database/drupal8" -y
   - lando drush st | grep Successful
   - lando drush cr | grep "Cache rebuild complete."
