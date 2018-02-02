@@ -58,7 +58,7 @@ lando start
 
 # Pull the database and files
 # Run lando pull -- -h for options
-land pull
+lando pull
 ```
 
 If you are interested in tweaking your setup check out the comments in your app's `.lando.yml`. Or you can augment your Lando spin up with additional services or tools by checking out the [advanced Lando docs](https://docs.devwithlando.io/tutorials/setup-additional-services.html).
