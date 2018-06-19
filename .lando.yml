@@ -1,13 +1,13 @@
-name: lando-pantheon-workflow
+name: the-ring-effect
 recipe: pantheon
 config:
   framework: drupal8
   env: dev
-  site: lando-pantheon-workflow
-  id: 34775439-5546-46a8-936b-5e55dde4b462
+  site: the-ring-effect
+  id: 52d99f65-f27e-4152-9ca3-e5180d9c5447
 events:
   post-db-import:
-    - appserver: "cd $LANDO_MOUNT && composer install"
+    - appserver: cd $LANDO_MOUNT && composer install
 services:
   appserver:
     overrides:
@@ -30,5 +30,3 @@ tooling:
   behat:
     service: appserver
     cmd: /app/vendor/bin/behat
-  # git:
-  #   service: appserver
