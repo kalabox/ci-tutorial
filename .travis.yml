@@ -4,6 +4,10 @@ php:
 services:
 - docker
 
+env:
+  - PANTHEON_MACHINE_TOKEN=4ryW7pj30YNYLlcCSL_g97Wfr48GNjQGnZ5MsrIDQ2fPY
+  - PANTHEON_SITE_NAME=poderopedia
+
 # Install lando
 before_install:
   - sudo apt-get -y update || true

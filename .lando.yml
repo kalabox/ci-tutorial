@@ -1,22 +1,21 @@
-name: lando-pantheon-workflow
+name: poderopedia
 recipe: pantheon
 config:
   framework: drupal8
   env: dev
-  site: lando-pantheon-workflow
-  id: 34775439-5546-46a8-936b-5e55dde4b462
+  site: poderopedia
+  id: d4e94e30-69fe-42d4-8b6b-a983f3cd50b4
 events:
   post-db-import:
-    - appserver: "cd $LANDO_MOUNT && composer install"
+    - appserver: cd $LANDO_MOUNT && composer install
 services:
   appserver:
     overrides:
-      services:
-        environment:
-          BEHAT_PARAMS: >-
-            {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
-            "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
-            "root":  "/app/web" }}}}
+      environment:
+        BEHAT_PARAMS: >-
+          {"extensions" : {"Behat\\MinkExtension" : {"base_url" :
+          "http://nginx/"}, "Drupal\\DrupalExtension" : {"drush" :   {
+          "root":  "/app/web" }}}}
 tooling:
   phplint:
     service: appserver
@@ -30,5 +29,3 @@ tooling:
   behat:
     service: appserver
     cmd: /app/vendor/bin/behat
-  # git:
-  #   service: appserver
